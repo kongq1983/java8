@@ -18,13 +18,13 @@ public class InventoryTest {
     public static void dealBook(Node inventoryNode) {
         NodeList bookList = inventoryNode.getChildNodes();
 
-
+        System.out.println("bookList.size="+bookList.getLength());
 
         for (int i = 0; i < bookList.getLength(); i++) {
             Node item = bookList.item(i);
             String name = item.getNodeName();
             String value = item.getNodeValue();
-            System.out.println(i + " node_name=" + name + " value=" + value+ " nodeType:"+item.getNodeType());
+            System.out.println("bookPos="+i + " node_name=" + name + " value=" + value+ " nodeType:"+item.getNodeType());
             if (item.getNodeType() == Node.ELEMENT_NODE) {
                 Element bookItem = (Element) item;
 
@@ -33,7 +33,7 @@ public class InventoryTest {
                 String year = bookItem.getAttribute("year");
 //                String year = null;
                 System.out.println(bookItem);
-                System.out.println(i + " node_name=" + name + " value=" + value + " year=" + year + " nodeType=" + bookItem.getNodeType());
+                System.out.println("bookIndex="+i + " node_name=" + name + " value=" + value + " year=" + year + " nodeType=" + bookItem.getNodeType());
 
                parseBookContent(bookItem);
 //            bookItem.getNodeValue()
@@ -44,6 +44,7 @@ public class InventoryTest {
 
     public static void read(InputStream in) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setIgnoringElementContentWhitespace(true);
         factory.setValidating(validating);
         DocumentBuilder builder = factory.newDocumentBuilder();
 

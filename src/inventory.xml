@@ -1,6 +1,8 @@
 <?xml version = "1.0" encoding = "utf-8"?>
 <inventory>
 
+
+
     <book year="2000">
         <title>Snow Crash</title>
         <author>King</author>
@@ -27,4 +29,12 @@
         <price>180.50</price>
     </book>
 
+
+    <book year="2010">
+        <title>Groovy</title>
+        <author>Zhu</author>
+        <publisher>pub4</publisher>
+        <isbn>40000</isbn>
+        <price>68.50</price>
+    </book>
 </inventory>
