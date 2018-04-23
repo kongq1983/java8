@@ -54,13 +54,17 @@ public class XPathTest {
         XPathFactory xpFactory = XPathFactory.newInstance();
         XPath xPath = xpFactory.newXPath();
         Document doc = getDocument(in);
-
+        // 注意位置 从1开始 ,而不是从0开始
         String title = xPath.evaluate("/inventory/book[1]/title", doc);
         System.out.println("book[1].title="+title);
 
         //检索一个节点的属性
         String year = xPath.evaluate("/inventory/book[1]/@year", doc);
         System.out.println("book[1].year="+year);
+
+        //返回值为数字类型，使用XPathConstants.NUMBER类型
+        int count = ((Number)xPath.evaluate("count(/inventory/book)", doc, javax.xml.xpath.XPathConstants.NUMBER)).intValue();
+        System.out.println("count:" + count);
 
     }
 
