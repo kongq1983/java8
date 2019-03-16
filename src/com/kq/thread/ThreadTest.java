@@ -14,6 +14,11 @@ public class ThreadTest {
             System.out.println("开始执行2.");
         };
         r.run();
+
+
+        Runnable r1 = () -> System.out.println("r1 start run.");
+        r1.run();
+
     }
 
 }
