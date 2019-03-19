@@ -1,11 +1,9 @@
-package com.kq.flatmapdemo;
+package com.kq.flatmap;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * FlatMapDemo
@@ -41,6 +39,7 @@ public class FlatMapDemo {
         List<String> list = playersInWorldCup2016.stream().flatMap(p->p.stream()).collect(Collectors.toList());
 
         list.forEach(System.out::println);
+
 
 
     }

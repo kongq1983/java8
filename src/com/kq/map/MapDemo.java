@@ -1,4 +1,4 @@
-package com.kq.mapdemo;
+package com.kq.map;
 
 import com.kq.data.StudentData;
 import com.kq.entity.Student;

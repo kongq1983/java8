@@ -21,4 +21,14 @@ public class StudentData {
 
         return list;
     }
+
+
+    public static Student getStudent(int age) {
+        Student stu = new Student();
+        stu.setAge(age);
+        stu.setName("king"+age);
+
+        return stu;
+    }
+
 }
