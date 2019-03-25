@@ -5,6 +5,7 @@ import com.kq.entity.Student;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -14,16 +15,16 @@ import java.util.stream.Collectors;
 public class PredicateUtil {
 
     private static Predicate<Student> getAgePredicate(final int age) {
-        Predicate<Student> predicate = p -> p.getAge()> 20;
+        Predicate<Student> predicate = p -> p.getAge() > 20;
         return predicate;
     }
 
 
-    static <T> Collection<T> filter(Collection<T> c , Predicate<T> p) {
+    static <T> Collection<T> filter(Collection<T> c, Predicate<T> p) {
         Collection<T> collection = new ArrayList<>();
 
-        for(T t : c){
-            if(p.test(t)){
+        for (T t : c) {
+            if (p.test(t)) {
                 collection.add(t);
             }
         }
@@ -32,9 +33,8 @@ public class PredicateUtil {
 
     }
 
-    public static List<Student> getStudentList(List<Student> list , int age) {
+    public static List<Student> getStudentList(List<Student> list, int age) {
         return list.stream().filter(getAgePredicate(age)).collect(Collectors.toList());
     }
-
 
 }
