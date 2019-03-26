@@ -20,7 +20,9 @@ public class StreamDemo {
         Student stu3 = StudentData.getStudent(20);
 
 
-        Stream newStream = Stream.of(stu1,stu2,stu3);
+        Stream<Student> stream = Stream.of(stu1,stu2,stu3);
+
+        stream.forEach(s-> System.out.println(s.getName()));
 
 
 

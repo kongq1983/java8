@@ -1,10 +1,31 @@
 package com.kq.entity;
 
+import java.util.Optional;
+
 public class Student {
 
     private int id;
     private String name;
     private int age;
+
+    private Optional<Teacher> optionalTeacher;
+    private Teacher teacher;
+
+    public Optional<Teacher> getOptionalTeacher() {
+        return optionalTeacher;
+    }
+
+    public void setOptionalTeacher(Optional<Teacher> optionalTeacher) {
+        this.optionalTeacher = optionalTeacher;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 
     public int getId() {
         return id;
@@ -36,6 +57,8 @@ public class Student {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", optionalTeacher=" + optionalTeacher +
+                ", teacher=" + teacher +
                 '}';
     }
 }
