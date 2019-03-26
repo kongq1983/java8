@@ -81,7 +81,9 @@ public class OptionalDemo {
         System.out.println("teacherName1="+teacherName);
 
 
-//        teacherName =  Optional.ofNullable(stu).flatMap(Student::getTeacher).map(Teacher::getName).orElse("unknown");
+//        teacherName =  Optional.ofNullable(stu).flatMap(Optional.ofNullable(new Teacher())).map(Teacher::getName).orElse("unknown");
+//        teacherName =  Optional.ofNullable(stu).flatMap(Optional.ofNullable(new Teacher())).map(Teacher::getName).orElse("unknown");
+//        teacherName =  Optional.ofNullable(stu).flatMap(Optional.ofNullable(Student::getTeacher)).map(Teacher::getName).orElse("unknown");
 //
 //        System.out.println("teacherName1="+teacherName);
 
