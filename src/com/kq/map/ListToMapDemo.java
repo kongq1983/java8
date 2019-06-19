@@ -3,6 +3,7 @@ package com.kq.map;
 import com.kq.data.StudentData;
 import com.kq.entity.Student;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,4 +36,22 @@ public class ListToMapDemo {
 
 
     }
+
+
+//    private List<DtoSyncCode> getProductCodeList(List<String> ids) {
+//        List<SInventory>  list = this.inventoryMapper.getInventoryByIds(ids);
+//
+//        if(CollectionUtils.isEmpty(list)) return Collections.emptyList();
+//
+//        return list.stream().map(inventory->{
+//            DtoSyncCode dto = new DtoSyncCode();
+//            dto.setSyncCode(inventory.getCode());
+//            dto.setInventoryId(inventory.getId());
+//            return dto;
+//        }).collect(Collectors.toList());
+//
+//
+//    }
+
+
 }
