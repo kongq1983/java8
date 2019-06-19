@@ -25,7 +25,6 @@ public class EntiryTransDemo {
             Teacher t = new Teacher();
             t.setId(String.valueOf(s.getId()));
             t.setName(s.getName());
-
             return t;
 
         }).collect(Collectors.toList());
