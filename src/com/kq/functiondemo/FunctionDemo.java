@@ -1,6 +1,10 @@
 package com.kq.functiondemo;
 
+import com.kq.entity.Person;
+
+import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.IntFunction;
 
 /**
  * Created by qikong on 2019/3/16.
@@ -38,6 +42,22 @@ public class FunctionDemo {
         Boolean b3 = fun2.apply("jpg");
         System.out.println("b3= endwith jpg="+b3);
 
+        IntFunction<Double> d = i-> i * 2.5d;
+        Double dresult = d.apply(3);
+        System.out.println("dresult="+dresult);
+
+        Person person = testBiFunction("King",28,(n,a)-> {
+            Person p = new Person(n,a);
+            return p;
+        });
+
+        System.out.println("person="+person);
+
+
+    }
+
+    private  static Person testBiFunction(String name, int age, BiFunction<String,Integer,Person> personBiFunction){
+        return personBiFunction.apply(name,age);
     }
 
 }
