@@ -17,6 +17,15 @@ public class ConsumerDemo {
 
         simpleBiConsumer(StudentData.getStudentList(),(a,s)-> System.out.println(a.getName()+"_"+s),"end");
 
+        Consumer<String> consumer= p -> System.out.println(p);
+        consumer.accept("18800008888");
+        StringBuilder string = new StringBuilder();
+        BiConsumer<String,Integer> consumer1 = (s,i)-> string.append(s+"_"+i);
+        consumer1.accept("king",8);
+        System.out.println(string.toString());
+
+
+
     }
 
     private static void simpleTestConsumer(List<Student> list, Consumer<Student> consumer){

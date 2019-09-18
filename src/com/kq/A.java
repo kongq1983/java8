@@ -12,7 +12,9 @@ public class A {
         String a = "a";
         String b = "a";
 
+        int[] totalIndex = new int[]{0};
         System.out.println(a==b);
+        System.out.println(totalIndex[0]);
     }
 
 }
