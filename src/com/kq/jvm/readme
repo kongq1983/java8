@@ -20,5 +20,7 @@
 jdk1.8
 -XX:MaxMetaspaceSize
 
+-XX:+PrintVMOptions    虚拟就启动明确指定的命令行显示参数
+
 一般配置
 -server -Xmx100m -Xms100m -XX:+PrintCommandLineFlags
