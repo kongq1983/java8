@@ -19,3 +19,6 @@
 
 jdk1.8
 -XX:MaxMetaspaceSize
+
+一般配置
+-server -Xmx100m -Xms100m -XX:+PrintCommandLineFlags
