@@ -32,7 +32,7 @@ jdk1.8
 -XX:+HeapDumpOnOutOfMemoryError
 
 # 导出OOM堆信息文件的路径
--XX:+HeapDumpPath=XXXX
+-XX:HeapDumpPath=XXXX
 
 # 在系统出现OOM时，执行一个脚本，可以发送邮件，报警或者是重启程序
 -XX:OnOutOfMemoryError
@@ -45,3 +45,10 @@ jdk1.8
 
 -XX:NewRatio    设置新生代和老年代的比值，如果设置为4则表示（eden+from（或者叫s0）+to（或者叫s1））： 老年代 =1：4），即年轻代占堆的五分之一
 -XX:SurvivorRatio   8 表示 两个Survivor ： Eden = 2： 8 ，每个Survivor占 1/10
+
+
+-XX:TraceClassLoading  类加载
+-XX:TraceClassUnloading 类卸载
+
+
+-server -Xmx512m -Xms512m -XX:+PrintGCApplicationConcurrentTime -XX:+PrintHeapAtGC -XX:+HeapDumpOnOutOfMemoryError -Xloggc:d:/log/gclog/shr-gc.log -XX:HeapDumpPath=d:/log/gclog/shr.hprof
