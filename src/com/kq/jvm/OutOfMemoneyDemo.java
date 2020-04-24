@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * OutOfMemoneyDemo
- * -server -Xms10m -Xmx20m
+ * OutOfMemoneyDemo -Xmn1000m
+ * d:/log/gclog目录需要手工创建
+ * -server -Xms10m -Xmx20m -Xloggc:d:/log/gclog/shr-gc.log -XX:+PrintGCDetails
+ * -server -Xms10m -Xmx20m -Xloggc:d:/log/gclog/shr-gc.log -XX:+PrintGCDateStamps
  * @author kq
  * @date 2019-12-04
  */
@@ -37,7 +39,8 @@ public class OutOfMemoneyDemo {
             byte[] bs = new byte[1024*1024];
             list.add(bs);
             System.out.println("i="+i);
-            Thread.sleep(1000);
+            //默认1s
+            Thread.sleep(10000);
         }
 
 
