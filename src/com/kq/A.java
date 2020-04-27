@@ -15,6 +15,13 @@ public class A {
         int[] totalIndex = new int[]{0};
         System.out.println(a==b);
         System.out.println(totalIndex[0]);
+
+        String packageName = A.class.getPackage().getName();
+        String className = A.class.getCanonicalName();
+
+        System.out.println("packageName="+packageName);
+        System.out.println("className="+className);
+
     }
 
 }

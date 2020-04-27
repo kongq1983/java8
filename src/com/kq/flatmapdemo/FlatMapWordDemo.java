@@ -19,6 +19,17 @@ public class FlatMapWordDemo {
         list.forEach(System.out::println);
 
 
+        StringBuilder str = new StringBuilder(32);
+        str.append("1");
+
+        for(int i=0;i<31;i++) {
+            str.append("0");
+        }
+
+        System.out.println(str);
+        System.out.println(str.length());
+
+
     }
 
 
