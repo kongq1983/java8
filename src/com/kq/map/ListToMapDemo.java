@@ -31,6 +31,8 @@ public class ListToMapDemo {
 
 //        System.out.println(list.stream().filter(t -> t.getName() != null).collect(Collectors.toMap(TestDO::getId, TestDO::getName, (k1, k2) -> k1)));
         //去掉重复的key
+//        Map<Integer, String> map = list.stream().filter(s -> s.getName() != null).collect(Collectors.toMap(Student::getAge, Student::getName,(k1,k2)-> k1));
+
         Map<Integer, String> map = list.stream().filter(s -> s.getName() != null).collect(Collectors.toMap(Student::getAge, Student::getName,(k1,k2)-> k1));
         System.out.println(map);
 
