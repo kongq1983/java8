@@ -1,0 +1,17 @@
+
+ConcurrentSkipListMap
+
+
+head
+
+findPredecessor
+1. 先网head.right查找，如果key>r.key，则往右查找，一直到right==null，则往下down
+如果key<r.key，则往下查找down ，然后根据上面循环(如果key>r.key，则往右查找，如果key<r.key，则往下查找down)
+
+一种是右边节点没了，另外一种key小于当前节点的key ，则down
+
+
+一直到down==null,则返回该节点
+
+
+2.上面返回的节点，然后一直往右查找

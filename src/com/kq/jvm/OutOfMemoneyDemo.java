@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * OutOfMemoneyDemo -Xmn1000m
  * d:/log/gclog目录需要手工创建
- * -server -Xms10m -Xmx20m -Xloggc:d:/log/gclog/shr-gc.log -XX:+PrintGCDetails
+ * -server -Xms10m -Xmx20m -Xloggc:d:/log/gclog/shr-gc.log -XX:+PrintGCDetails -XX:+PrintGCApplicationStoppedTime -Xloggc:d:/log/shr-gc.log
  * -server -Xms10m -Xmx20m -Xloggc:d:/log/gclog/shr-gc.log -XX:+PrintGCDateStamps
  * @author kq
  * @date 2019-12-04

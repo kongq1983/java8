@@ -52,3 +52,19 @@ jdk1.8
 
 
 -server -Xmx512m -Xms512m -XX:+PrintGCApplicationConcurrentTime -XX:+PrintHeapAtGC -XX:+HeapDumpOnOutOfMemoryError -Xloggc:d:/log/gclog/shr-gc.log -XX:HeapDumpPath=d:/log/gclog/shr.hprof
+
+
+
+-server
+-Xms2048m
+-Xmx2048m
+-XX:+PrintGCDetails
+-XX:+PrintGCDateStamps
+-XX:MaxTenuringThreshold=15
+-XX:+DisableExplicitGC
+-XX:+PrintGCApplicationStoppedTime
+-XX:-UseAdaptiveSizePolicy
+-Xloggc:d:/log/shr-gc.log
+-XX:NewRatio=3
+-XX:SurvivorRatio=6
+-Dfile.encoding=utf-8
