@@ -8,6 +8,24 @@ import java.util.Random;
 
 public class StudentData {
 
+
+    public static List<Student> getStudentList1(){
+        int[] ages= {18,16,20};
+
+
+        Random r = new Random();
+        List<Student> list = new ArrayList();
+        for(int age : ages) {
+            Student stu = new Student();
+            stu.setId(r.nextInt(100));
+            ((Student) stu).setAge(age);
+            ((Student) stu).setName("king"+age);
+            list.add(stu);
+        }
+
+        return list;
+    }
+
     public static List<Student> getStudentList(){
         int[] ages= {19,16,22,17,18,20,30,15,28};
 
@@ -30,14 +48,15 @@ public class StudentData {
      * @return
      */
     public static List<Student> getStudentListDuplicate(){
-        int[] ages= {18,16,22,18};
+        int[] ages= {18,16,22,18,18,28,20};
 
 
         Random r = new Random();
         List<Student> list = new ArrayList();
         for(int age : ages) {
             Student stu = new Student();
-            stu.setId(r.nextInt(100));
+//            stu.setId(r.nextInt(100));
+            stu.setId(r.nextInt(age));
             ((Student) stu).setAge(age);
             ((Student) stu).setName("king"+age);
             list.add(stu);
