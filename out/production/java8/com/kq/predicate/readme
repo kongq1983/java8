@@ -1,0 +1,8 @@
+
+Predicate<BaseProductDiscount> p1 = p-> p.getPeriodType()!=null && p.getPeriodType()==2;
+        Predicate<BaseProductDiscount> p2 = p-> p.getPeriodType()!=null && p.getPeriodType()==1
+                && p.getStartTime()!=null && p.getEndTime()!=null
+                && p.getStartTime().getTime() <= now.getTime() && p.getEndTime().getTime()>= now.getTime();
+
+
+list.stream().filter(p1.or(p2)).collect(Collectors.toList());

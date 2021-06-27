@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<inventory>
+
+
+
+    <book year="2000">
+        <title>Snow Crash</title>
+        <author>King</author>
+        <publisher>pub1</publisher>
+        <isbn>10000</isbn>
+        <price>60.50</price>
+    </book>
+
+
+    <book year="2005">
+        <title>Java</title>
+        <author>wang</author>
+        <publisher>pub2</publisher>
+        <isbn>20000</isbn>
+        <price>80.50</price>
+    </book>
+
+
+    <book year="2008">
+        <title>Python</title>
+        <author>chen</author>
+        <publisher>pub3</publisher>
+        <isbn>30000</isbn>
+        <price>180.50</price>
+    </book>
+
+
+    <book year="2010">
+        <title>Groovy</title>
+        <author>Zhu</author>
+        <publisher>pub4</publisher>
+        <isbn>40000</isbn>
+        <price>68.50</price>
+    </book>
+</inventory>
