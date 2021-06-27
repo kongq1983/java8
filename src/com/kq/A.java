@@ -8,7 +8,7 @@ package com.kq;
  */
 public class A {
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         String a = "a";
         String b = "a";
 
@@ -22,6 +22,14 @@ public class A {
         System.out.println("packageName="+packageName);
         System.out.println("className="+className);
 
+    }
+
+    public static void main(String[] args) {
+        //0000 0001
+        //0000 1000
+        int size = 1 << 3;
+
+        System.out.println(size);
     }
 
 }
