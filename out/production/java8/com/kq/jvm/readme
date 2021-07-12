@@ -57,7 +57,14 @@ jdk1.8
 
 -server
 -Xms2048m
--Xmx2048m
+-Xmx
+
+-Xms4096m
+-Xmx4096m
+
+-Xms8192m
+-Xmx8192m
+
 -XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
 -XX:MaxTenuringThreshold=15
@@ -68,3 +75,12 @@ jdk1.8
 -XX:NewRatio=3
 -XX:SurvivorRatio=6
 -Dfile.encoding=utf-8
+
+--------------------------------------------------------
+64位内存
+2的64位
+
+2的32次方=4G
+2的34次方=16G
+2的35次方=32G
+--------------------------------------------------------
