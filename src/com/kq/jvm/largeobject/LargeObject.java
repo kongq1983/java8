@@ -1,5 +1,7 @@
 package com.kq.jvm.largeobject;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * LargeObject
  *
@@ -19,11 +21,14 @@ public class LargeObject {
         allocation1 = new byte[2 * _1MB];
         allocation2 = new byte[2 * _1MB];
         allocation3 = new byte[2 * _1MB];
-        allocation4 = new byte[4 * _1MB];  // 出现一次Minor GC
+//        allocation4 = new byte[4 * _1MB];  // 出现一次Minor GC
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         testAllocation();
+
+        TimeUnit.MINUTES.sleep(10);
+
     }
 
 
