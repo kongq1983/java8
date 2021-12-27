@@ -43,7 +43,9 @@ public class LargeObject {
             TimeUnit.MINUTES.sleep(10);
 //            TimeUnit.SECONDS.sleep(2);
         }
+//        allocation4 = new byte[4 * _1MB];  // 出现一次Minor GC
     }
+
 
 
 }
