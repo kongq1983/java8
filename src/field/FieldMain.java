@@ -21,7 +21,19 @@ public class FieldMain {
         f.b.toString();
         f.b.toString();
 
-        TimeUnit.MINUTES.sleep(600);
+//        TimeUnit.MINUTES.sleep(600);
+
+        int i=0;
+        for (boolean continueConsume = true; continueConsume; ) {
+
+            i++;
+
+            if(i>5) {
+                continueConsume = false;
+            }
+
+            System.out.println("i:"+i);
+        }
 
     }
 
