@@ -35,8 +35,13 @@ public class StringPredicateDemo {
 
         String photoName2 = "aaa.png";
 
+        //只要满足1个条件，就是true
         boolean isPhotoSuffix = jpgP.or(pngP).or(gifP).test(photoName2);
         System.out.println(photoName2+", isPhotoSuffix="+isPhotoSuffix);
+
+        // 取反处理
+        boolean isNotJpg = jpgP.negate().test(photoName);
+        System.out.println(photoName+", isNotJpg="+isNotJpg);
     }
 
 }
