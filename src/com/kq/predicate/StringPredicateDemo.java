@@ -29,7 +29,6 @@ public class StringPredicateDemo {
         boolean both = jpgP.and(getP).test(photoName1);
         System.out.println(photoName1+", both="+both);
 
-
         Predicate<String> gifP = o -> o.endsWith("gif");
         Predicate<String> pngP = o -> o.endsWith("png");
 
