@@ -43,4 +43,13 @@ public class Volatile {
 
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public static void main(String[] args) {
+        Volatile v = new Volatile();
+        v.size=10;
+    }
+
 }
