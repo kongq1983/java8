@@ -1,0 +1,31 @@
+ProxyGenerator
+
+Proxy.newProxyInstance
+
+可以看到generateClassFile()方法是按照Class文件结构进行动态拼接的。什么是Class文件呢？在这里我们先要说明下，我们平时编写的Java文件是以.java结尾的，在编写好了之后通过编译器进行编译会生成.class文件，这个.class文件就是Class文件。Java程序的执行只依赖于Class文件，和Java文件是没有关系的。这个Class文件描述了一个类的信息，当我们需要使用到一个类时，Java虚拟机就会提前去加载这个类的Class文件并进行初始化和相关的检验工作，Java虚拟机能够保证在你使用到这个类之前就会完成这些工作，我们只需要安心的去使用它就好了，而不必关心Java虚拟机是怎样加载它的。当然，Class文件并不一定非得通过编译Java文件而来，你甚至可以直接通过文本编辑器来编写Class文件。在这里，JDK动态代理就是通过程序来动态生成Class文件的。我们再次回到上面的代码中，可以看到，生成Class文件主要分为三步：
+
+第一步：收集所有要生成的代理方法，将其包装成ProxyMethod对象并注册到Map集合中。
+
+第二步：收集所有要为Class文件生成的字段信息和方法信息。
+
+第三步：完成了上面的工作后，开始组装Class文件。
+
+我们知道一个类的核心部分就是它的字段和方法。我们重点聚焦第二步，看看它为代理类生成了哪些字段和方法。在第二步中，按顺序做了下面四件事。
+
+1.为代理类生成一个带参构造器，传入InvocationHandler实例的引用并调用父类的带参构造器。
+
+2.遍历代理方法Map集合，为每个代理方法生成对应的Method类型静态域，并将其添加到fields集合中。
+
+3.遍历代理方法Map集合，为每个代理方法生成对应的MethodInfo对象，并将其添加到methods集合中。
+
+4.为代理类生成静态初始化方法，该静态初始化方法主要是将每个代理方法的引用赋值给对应的静态字段。
+
+通过以上分析，我们可以大致知道JDK动态代理最终会为我们生成如下结构的代理类：
+
+
+具体逻辑:
+
+Proxy.newProxyInstance ->  Class<?> cl = getProxyClass0(loader, intfs); -> return proxyClassCache.get(loader, interfaces);
+-> V value = supplier.get(); (WeakCache) -> value = Objects.requireNonNull(valueFactory.apply(key, parameter));(WeakCache)
+-> Proxy.ProxyClassFactory.  byte[] proxyClassFile = ProxyGenerator.generateProxyClass( proxyName, interfaces, accessFlags);
+-> Proxy.defineClass0(byte[])

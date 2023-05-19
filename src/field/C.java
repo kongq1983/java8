@@ -16,4 +16,9 @@ public class C extends B{
     private double d1 = 600.6;
     private short s2 =400;
 
+    static {
+        System.out.println(A.NUM);
+        System.out.println(A.SIZE);
+    }
+
 }
