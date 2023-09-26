@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 /**
  * AA
  *
@@ -24,6 +26,12 @@ public class AA {
 //        System.out.println(s3==s3.intern()); // true
 
         AA.class.getDeclaredFields();
+
+
+        UUID uuid = UUID.randomUUID();
+        System.out.println(uuid.toString().replaceAll("-","").toUpperCase());
+
+        System.out.println("ZYZH666888B65BE96B7B076E25E92E7E".length());
 
     }
 
