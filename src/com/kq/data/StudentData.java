@@ -48,7 +48,7 @@ public class StudentData {
      * @return
      */
     public static List<Student> getStudentListDuplicate(){
-        int[] ages= {18,16,22,18,18,28,20};
+        int[] ages= {18,16,22,18,18,28,20,19,20,28};
 
 
         Random r = new Random();
